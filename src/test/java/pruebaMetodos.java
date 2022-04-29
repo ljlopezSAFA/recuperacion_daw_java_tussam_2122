@@ -124,7 +124,7 @@ public class pruebaMetodos {
         Integer tamanyoListaParadas = paradas.size();
         Integer tamanyoListaParadasEsperadas = 7;
 
-        //Comprobacion de autobuses
+        //Comprobacion de recorridos
         assertEquals(tamanyoLista, tamanyoListaEsperado);
         recorridoList.forEach(p->{
             assertNotNull(p.getParadas());
@@ -158,7 +158,6 @@ public class pruebaMetodos {
 
     @Test
     public void testGetParadaPosible() {
-
         Double importe = 5.0;
         Double importe2 = 10.0;
         List<Autobus> autobusesPrueba = List.of(autobuses.get(0),autobuses.get(1));

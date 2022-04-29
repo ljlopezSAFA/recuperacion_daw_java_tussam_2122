@@ -1,8 +1,8 @@
 id_recorrido, id_parada, ubicacion, num_parada,bonificacion_parada
-1, 1 , Avenida Reina Mercedes , 160 , 1.2
-1, 2 , Avenida La Palmera , 159 , 1.05
-1, 3 , Pabellón de Mexico , 158 , 1.10
-2, 4 , Calatrava , 60 , 1.3
-2, 5 , La Barqueta , 59 , 1.25
-3, 6 , Prado San Sebastián ,10 , 1.12
-3, 7 , Avenida del Cid ,9 , 1.32
+1,1, Avenida Reina Mercedes ,160,1.2
+1,2, Avenida La Palmera ,159,1.05
+1,3, Pabellón de Mexico ,158,1.10
+2,4, Calatrava ,60,1.3
+2,5, La Barqueta ,59,1.25
+3,6, Prado San Sebastián ,10,1.12
+3,7, Avenida del Cid ,9,1.32
