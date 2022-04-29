@@ -150,6 +150,7 @@ public class pruebaMetodos {
 
         assertEquals(jornadaLaboral.getId() , 1);
         assertEquals(jornadaLaboral.getConductor() , conductor);
+        assertEquals(jornadaLaboral.getNum_paradas_totales(), 5);
         assertEquals(jornadaLaboral.getFecha() , LocalDate.now());
         assertEquals(jornadaLaboral.getAutobuses_num_itinerarios(), mapa);
         assertTrue(jornadaLaboral.getSalario() ==  19.9);
