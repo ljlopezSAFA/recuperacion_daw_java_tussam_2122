@@ -6,9 +6,10 @@ import modelos.Parada;
 import modelos.Recorrido;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class UtilidadesAutobus {
 
@@ -26,7 +27,7 @@ public class UtilidadesAutobus {
      */
     public static List<Autobus> getAutobusConParadas(List<Autobus> autobuses , List<Parada> paradas){
 
-        return new ArrayList<>();
+        return autobuses.stream().filter(a-> !Collections.disjoint(a.getRecorrido().getParadas(),paradas)).collect(Collectors.toList());
     }
 
 
@@ -39,8 +40,7 @@ public class UtilidadesAutobus {
      * @return
      */
     public static Map<Linea, List<Autobus>> getAutobusesPorLinea(List<Autobus> autobuses){
-
-        return new HashMap<>();
+        return autobuses.stream().collect(Collectors.groupingBy(Autobus::getLinea));
     }
 
 
@@ -55,7 +55,9 @@ public class UtilidadesAutobus {
      */
     public static List<Parada> getParadasCoincidentes(Recorrido recorrido1, Recorrido recorrido2){
 
-        return new ArrayList<>();
+        List<Parada> paradas = new ArrayList<>(recorrido1.getParadas());
+        paradas.retainAll(recorrido2.getParadas());
+        return  paradas;
     }
 
 

@@ -7,7 +7,7 @@ public class Autobus {
     private int id;
     private Linea linea;
     private String matricula;
-    private  Recorrido recorrido;
+    private Recorrido recorrido;
 
     public Autobus() {
     }

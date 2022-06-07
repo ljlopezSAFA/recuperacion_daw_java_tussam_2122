@@ -13,6 +13,7 @@ public class JornadaLaboral {
     private int num_paradas_totales;
     private double salario;
 
+
     public JornadaLaboral() {
     }
 

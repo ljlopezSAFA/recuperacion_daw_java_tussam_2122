@@ -7,7 +7,6 @@ import utilidades.UtilidadesFichero;
 
 import java.time.LocalDate;
 import java.util.*;
-
 import static org.junit.Assert.*;
 
 public class pruebaMetodos {
@@ -20,7 +19,7 @@ public class pruebaMetodos {
     @Before
     public void inicializadoDeDatos() throws Exception {
 
-        //----------------------- AUTOBUSES -------------------------------------
+        //----------------------- AUTOBUSES -------------------------
         Autobus a1 = new Autobus(1, Linea.A1, "1234-AAA");
         Autobus a2 = new Autobus(2, Linea.A2, "1234-BBB");
         Autobus a3 = new Autobus(3, Linea.A3, "1234-CCC");
