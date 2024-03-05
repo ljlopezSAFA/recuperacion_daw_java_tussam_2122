@@ -27,7 +27,8 @@ public class UtilidadesAutobus {
      */
     public static List<Autobus> getAutobusConParadas(List<Autobus> autobuses , List<Parada> paradas){
 
-        return autobuses.stream().filter(a-> !Collections.disjoint(a.getRecorrido().getParadas(),paradas)).collect(Collectors.toList());
+
+        return new ArrayList<>();
     }
 
 
@@ -40,7 +41,7 @@ public class UtilidadesAutobus {
      * @return
      */
     public static Map<Linea, List<Autobus>> getAutobusesPorLinea(List<Autobus> autobuses){
-        return autobuses.stream().collect(Collectors.groupingBy(Autobus::getLinea));
+        return new HashMap<>();
     }
 
 
@@ -55,9 +56,7 @@ public class UtilidadesAutobus {
      */
     public static List<Parada> getParadasCoincidentes(Recorrido recorrido1, Recorrido recorrido2){
 
-        List<Parada> paradas = new ArrayList<>(recorrido1.getParadas());
-        paradas.retainAll(recorrido2.getParadas());
-        return  paradas;
+          return new ArrayList<>();
     }
 
 
