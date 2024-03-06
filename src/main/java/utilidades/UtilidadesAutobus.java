@@ -5,10 +5,7 @@ import modelos.Linea;
 import modelos.Parada;
 import modelos.Recorrido;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class UtilidadesAutobus {
@@ -27,8 +24,19 @@ public class UtilidadesAutobus {
      */
     public static List<Autobus> getAutobusConParadas(List<Autobus> autobuses , List<Parada> paradas){
 
+        List<Autobus> autobusesPosibles = new ArrayList<>();
 
-        return new ArrayList<>();
+        for(Autobus a: autobuses){
+
+            List<Parada> paradasAutobus = new ArrayList<>(a.getRecorrido().getParadas());
+            paradasAutobus.retainAll(paradas);
+
+            if(! paradasAutobus.isEmpty()){
+                autobusesPosibles.add(a);
+            }
+        }
+
+        return autobusesPosibles;
     }
 
 
@@ -41,7 +49,9 @@ public class UtilidadesAutobus {
      * @return
      */
     public static Map<Linea, List<Autobus>> getAutobusesPorLinea(List<Autobus> autobuses){
-        return new HashMap<>();
+        return autobuses
+                .stream()
+                .collect(Collectors.groupingBy(Autobus::getLinea));
     }
 
 
@@ -56,7 +66,15 @@ public class UtilidadesAutobus {
      */
     public static List<Parada> getParadasCoincidentes(Recorrido recorrido1, Recorrido recorrido2){
 
-          return new ArrayList<>();
+          List<Parada> paradasCoincidentes = new ArrayList<>();
+
+          //AÑADIMOS LAS PARADAS DEL RECORRIDO 1
+          paradasCoincidentes.addAll(recorrido1.getParadas());
+
+          //QUITAMOS LAS PARADAS QUE NO COINCIDAN CON LAS DEL RECORRIDO 2
+          paradasCoincidentes.retainAll(recorrido2.getParadas());
+
+          return paradasCoincidentes;
     }
 
 
